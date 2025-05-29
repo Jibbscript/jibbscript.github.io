@@ -7,11 +7,10 @@ import starlightBlog from 'starlight-blog';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'YarpDotCloud',
+			title: 'JibbScript',
 			plugins: [
 				starlightBlog(),
 			],
-			site: 'https://www.yarp.cloud',
 			// Add logo
 			logo: {
 				src: './src/assets/yarpdotcloudpokemonlogo.svg',
@@ -26,13 +25,14 @@ export default defineConfig({
 					label: 'Posts',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: 'Rangency', slug: 'posts/rangency' },
-						{ label: 'FedRAMP Data Mesh Reference Architecture', slug: 'posts/fedramp-datamesh' },
-						{ label: 'YarpDotCloud', slug: 'posts/yarpdotcloud' },
+						{ label: 'Rangency', slug: 'reflections/rangency' },
+						{ label: 'FedRAMP Data Mesh Reference Architecture', slug: 'fedramp/fedramp-datamesh' },
+						{ label: 'Security Infrastructure MVP Collection', slug: 'security/security-infrastructure-mvp-collection/security-infra-mvp-product-req-docs' },
 					],
 				},
 			],
-				,
+				
 		}),
 	],
+	site: 'https://www.yarp.cloud',
 });
