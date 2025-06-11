@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import config from "virtual:starlight/user-config";
+import logo from "../assets/yarpdotcloudpokemonlogo.svg";
+
+const { locale } = Astro.props;
+// Get the site title from config, handling localization
+const siteTitle =
+  typeof config.title === "string"
+    ? config.title
+    : config.title?.[locale] || config.title?.["en"] || "YarpDotCloud";
+---
+
+<a href={import.meta.env.BASE_URL} class="site-title">
+  <Image
+    src={logo}
+    alt="YarpDotCloud Logo"
+    width={93}
+    height={93}
+    loading="eager"
+    decoding="async"
+    class="logo"
+  />
+</a>
+
+<style>
+  .site-title {
+    align-items: center;
+    color: inherit;
+    display: flex;
+    font-size: var(--sl-text-h4);
+    font-weight: 600;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  .logo {
+    flex-shrink: 0;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  @media (min-width: 50rem) {
+    .site-title {
+      font-size: var(--sl-text-h3);
+    }
+  }
+</style>
